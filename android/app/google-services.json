@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915107551885",
+    "project_id": "mouth-to-mouth",
+    "storage_bucket": "mouth-to-mouth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915107551885:android:b7fa10eeb0319aa0f720c4",
+        "android_client_info": {
+          "package_name": "com.mtm.app.mouth_to_mouth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOxsHWY9cqTuGx88fjy60xB3slPDWAgsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

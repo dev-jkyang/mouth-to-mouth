@@ -28,6 +28,10 @@ dependencies:
   get:
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
+  firebase_core: ^2.30.0
+  http:
+  cloud_firestore: ^4.17.0
+
 
 dev_dependencies:
   flutter_test:

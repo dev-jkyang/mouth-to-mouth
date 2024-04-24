@@ -20,11 +20,18 @@ MtmEnglishData _$MtmEnglishDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MtmEnglishData {
+  @JsonSerializable(explicitToJson: true)
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'my_question')
-  String? get question => throw _privateConstructorUsedError;
+  @JsonKey(name: 'q')
+  String get question => throw _privateConstructorUsedError;
+  @JsonKey(name: 'y')
   String get answerYes => throw _privateConstructorUsedError;
+  @JsonKey(name: 'n')
   String get answerNo => throw _privateConstructorUsedError;
+  String? get yesRecordingPath => throw _privateConstructorUsedError;
+  set yesRecordingPath(String? value) => throw _privateConstructorUsedError;
+  String? get noRecordingPath => throw _privateConstructorUsedError;
+  set noRecordingPath(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,10 +46,12 @@ abstract class $MtmEnglishDataCopyWith<$Res> {
       _$MtmEnglishDataCopyWithImpl<$Res, MtmEnglishData>;
   @useResult
   $Res call(
-      {int id,
-      @JsonKey(name: 'my_question') String? question,
-      String answerYes,
-      String answerNo});
+      {@JsonSerializable(explicitToJson: true) int id,
+      @JsonKey(name: 'q') String question,
+      @JsonKey(name: 'y') String answerYes,
+      @JsonKey(name: 'n') String answerNo,
+      String? yesRecordingPath,
+      String? noRecordingPath});
 }
 
 /// @nodoc
@@ -59,19 +68,21 @@ class _$MtmEnglishDataCopyWithImpl<$Res, $Val extends MtmEnglishData>
   @override
   $Res call({
     Object? id = null,
-    Object? question = freezed,
+    Object? question = null,
     Object? answerYes = null,
     Object? answerNo = null,
+    Object? yesRecordingPath = freezed,
+    Object? noRecordingPath = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      question: freezed == question
+      question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       answerYes: null == answerYes
           ? _value.answerYes
           : answerYes // ignore: cast_nullable_to_non_nullable
@@ -80,6 +91,14 @@ class _$MtmEnglishDataCopyWithImpl<$Res, $Val extends MtmEnglishData>
           ? _value.answerNo
           : answerNo // ignore: cast_nullable_to_non_nullable
               as String,
+      yesRecordingPath: freezed == yesRecordingPath
+          ? _value.yesRecordingPath
+          : yesRecordingPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      noRecordingPath: freezed == noRecordingPath
+          ? _value.noRecordingPath
+          : noRecordingPath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -93,10 +112,12 @@ abstract class _$$MtmEnglishDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      @JsonKey(name: 'my_question') String? question,
-      String answerYes,
-      String answerNo});
+      {@JsonSerializable(explicitToJson: true) int id,
+      @JsonKey(name: 'q') String question,
+      @JsonKey(name: 'y') String answerYes,
+      @JsonKey(name: 'n') String answerNo,
+      String? yesRecordingPath,
+      String? noRecordingPath});
 }
 
 /// @nodoc
@@ -111,19 +132,21 @@ class __$$MtmEnglishDataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? question = freezed,
+    Object? question = null,
     Object? answerYes = null,
     Object? answerNo = null,
+    Object? yesRecordingPath = freezed,
+    Object? noRecordingPath = freezed,
   }) {
     return _then(_$MtmEnglishDataImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      question: freezed == question
+      question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       answerYes: null == answerYes
           ? _value.answerYes
           : answerYes // ignore: cast_nullable_to_non_nullable
@@ -132,6 +155,14 @@ class __$$MtmEnglishDataImplCopyWithImpl<$Res>
           ? _value.answerNo
           : answerNo // ignore: cast_nullable_to_non_nullable
               as String,
+      yesRecordingPath: freezed == yesRecordingPath
+          ? _value.yesRecordingPath
+          : yesRecordingPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      noRecordingPath: freezed == noRecordingPath
+          ? _value.noRecordingPath
+          : noRecordingPath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -141,29 +172,39 @@ class __$$MtmEnglishDataImplCopyWithImpl<$Res>
 class _$MtmEnglishDataImpl
     with DiagnosticableTreeMixin
     implements _MtmEnglishData {
-  const _$MtmEnglishDataImpl(
-      {required this.id,
-      @JsonKey(name: 'my_question') this.question,
-      this.answerYes = 'yes',
-      required this.answerNo});
+  _$MtmEnglishDataImpl(
+      {@JsonSerializable(explicitToJson: true) required this.id,
+      @JsonKey(name: 'q') required this.question,
+      @JsonKey(name: 'y') required this.answerYes,
+      @JsonKey(name: 'n') required this.answerNo,
+      this.yesRecordingPath = '',
+      this.noRecordingPath = ''});
 
   factory _$MtmEnglishDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$MtmEnglishDataImplFromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final int id;
   @override
-  @JsonKey(name: 'my_question')
-  final String? question;
+  @JsonKey(name: 'q')
+  final String question;
   @override
-  @JsonKey()
+  @JsonKey(name: 'y')
   final String answerYes;
   @override
+  @JsonKey(name: 'n')
   final String answerNo;
+  @override
+  @JsonKey()
+  String? yesRecordingPath;
+  @override
+  @JsonKey()
+  String? noRecordingPath;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MtmEnglishData(id: $id, question: $question, answerYes: $answerYes, answerNo: $answerNo)';
+    return 'MtmEnglishData(id: $id, question: $question, answerYes: $answerYes, answerNo: $answerNo, yesRecordingPath: $yesRecordingPath, noRecordingPath: $noRecordingPath)';
   }
 
   @override
@@ -174,27 +215,10 @@ class _$MtmEnglishDataImpl
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('question', question))
       ..add(DiagnosticsProperty('answerYes', answerYes))
-      ..add(DiagnosticsProperty('answerNo', answerNo));
+      ..add(DiagnosticsProperty('answerNo', answerNo))
+      ..add(DiagnosticsProperty('yesRecordingPath', yesRecordingPath))
+      ..add(DiagnosticsProperty('noRecordingPath', noRecordingPath));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MtmEnglishDataImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.question, question) ||
-                other.question == question) &&
-            (identical(other.answerYes, answerYes) ||
-                other.answerYes == answerYes) &&
-            (identical(other.answerNo, answerNo) ||
-                other.answerNo == answerNo));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, question, answerYes, answerNo);
 
   @JsonKey(ignore: true)
   @override
@@ -212,24 +236,35 @@ class _$MtmEnglishDataImpl
 }
 
 abstract class _MtmEnglishData implements MtmEnglishData {
-  const factory _MtmEnglishData(
-      {required final int id,
-      @JsonKey(name: 'my_question') final String? question,
-      final String answerYes,
-      required final String answerNo}) = _$MtmEnglishDataImpl;
+  factory _MtmEnglishData(
+      {@JsonSerializable(explicitToJson: true) required final int id,
+      @JsonKey(name: 'q') required final String question,
+      @JsonKey(name: 'y') required final String answerYes,
+      @JsonKey(name: 'n') required final String answerNo,
+      String? yesRecordingPath,
+      String? noRecordingPath}) = _$MtmEnglishDataImpl;
 
   factory _MtmEnglishData.fromJson(Map<String, dynamic> json) =
       _$MtmEnglishDataImpl.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   int get id;
   @override
-  @JsonKey(name: 'my_question')
-  String? get question;
+  @JsonKey(name: 'q')
+  String get question;
   @override
+  @JsonKey(name: 'y')
   String get answerYes;
   @override
+  @JsonKey(name: 'n')
   String get answerNo;
+  @override
+  String? get yesRecordingPath;
+  set yesRecordingPath(String? value);
+  @override
+  String? get noRecordingPath;
+  set noRecordingPath(String? value);
   @override
   @JsonKey(ignore: true)
   _$$MtmEnglishDataImplCopyWith<_$MtmEnglishDataImpl> get copyWith =>
