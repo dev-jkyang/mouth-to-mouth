@@ -30,6 +30,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+*/mouth-to-mouth-firebase-adminsdk-b9chy-05b76a4a4d.json
 
 # Symbolication related
 app.*.symbols
