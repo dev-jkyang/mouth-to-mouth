@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mouth_to_mouth/pages/practice_mode_page.dart';
 import 'package:mouth_to_mouth/repository/mtm_repository.dart';
 import 'package:mouth_to_mouth/view_model_controller/mtm_controller.dart';
 
@@ -68,7 +69,8 @@ Future<Object?> ShowOptionDialog(BuildContext context, {required ValueChanged on
                         selectEnd = val + 1;
                       },
                       children: [
-                        ...List.generate(100, (index) => Center(child: Text((index + 1).toString()))),
+                        ...List.generate(
+                            100, (index) => Center(child: Text((index + 1).toString()))),
                       ],
                     ),
                   ),
@@ -117,8 +119,15 @@ Future<Object?> ShowOptionDialog(BuildContext context, {required ValueChanged on
               Align(
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
-                  onPressed: () async{
-                    final rageData = await vm.getMtmDataWithRange(start: selectStart, end: selectEnd, isRandom: isRandom, isAuto: isAuto);
+                  onPressed: () async {
+                    await vm.getMtmDataWithRange(start: selectStart, end: selectEnd);
+                    Get.to(
+                      () => PracticeModePage(
+                        isAuto: isAuto,
+                        isRandom: isRandom,
+                        data: vm.resultData,
+                      ),
+                    );
                   },
                   child: Text(
                     '시작',

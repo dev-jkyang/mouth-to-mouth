@@ -10,16 +10,17 @@ class MtmController extends GetxController {
   late List<QueryDocumentSnapshot<MtmEnglishData>> data;
   final MtmRepository _repository = MtmRepository();
 
+  RxList<MtmEnglishData> get resultData => dataList;
+
   @override
   Future<void> onInit() async{
-    data = await _repository.fetchMtmData();
-    print('==========================onInit');
     super.onInit();
   }
 
-  Future<List<MtmEnglishData>> getMtmDataWithRange(
-      {required int start, required int end, required bool isRandom, required bool isAuto}) async {
+  Future<void> getMtmDataWithRange({required int start, required int end}) async {
+    await _repository.fetchMtmDataWithRange(start: start+1, end: end+1);
+    data = _repository.mtmData;
     dataList.value = data.map((e) => e.data()).toList();
-    return dataList.getRange(start, end).toList();
+    dataList.getRange(start, end).toList();
   }
 }

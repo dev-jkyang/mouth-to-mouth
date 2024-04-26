@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mouth_to_mouth/repository/mtm_repository.dart';
+import 'package:mouth_to_mouth/service/stt_package.dart';
+import 'package:mouth_to_mouth/service/tts_package.dart';
+import 'package:mouth_to_mouth/service/voice_recording_package.dart';
 import 'package:mouth_to_mouth/view_model_controller/mtm_controller.dart';
 import '../components/option_dialog.dart';
 import '../model/mtm_english_data.dart';
@@ -20,6 +23,11 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
+    //init tts
+    TtsModule.instance.setOption();
+    // SttModule.instance.init();
+    RecordingModule.instance.openRecorder();
+    RecordingModule.instance.openPlayer();
     super.initState();
   }
 
